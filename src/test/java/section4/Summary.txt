@@ -25,3 +25,35 @@ And Cars are displayed
 	public void user_login_into_application(String username, String password) {
 		System.out.println("Username is:- "+username+" and password is:- "+password);
 	}
+======================================================================================================================
+Vid: 14:-
+---------
+[Outline:- will run the same test case for n number of times for multiple datasets]
+----------
+Scenario Outline: Admin Page default login
+Given User is on netbanking landing page
+When user login into application with "<Username>" and password "<Password>"
+Then Home Page is displayed
+And Cars are displayed
+
+Examples:
+	|	Username	|	Password	|
+	|	debituser	|	hello12		|
+	|	credituser	|	lpo132		|
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
