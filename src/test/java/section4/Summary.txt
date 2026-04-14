@@ -1,0 +1,27 @@
+Section-4
+---------
+Vid: 13:- [Regular Expression usage in Feature files for providing data inside the TestScenarios]
+---------
+1. Achieve Reusability in Features files.[Re-Use the same step defined in "stepDefinition" files]
+// feature file
+Feature: Application Login
+
+Scenario: Admin Page default login
+
+Given User is on netbanking landing page
+When user login into application with "admin" and password "1234" // same test step with different credentials
+Then Home Page is displayed
+And Cars are displayed
+
+# Reusable
+
+Given User is on netbanking landing page
+When user login into application with "user1" and password "0953" // same test step with different credentials
+Then Home Page is displayed
+And Cars are displayed
+
+// stepDefinition file
+@When("user login into application with {string} and password {string}") // {string} is a parameter type is selenium
+	public void user_login_into_application(String username, String password) {
+		System.out.println("Username is:- "+username+" and password is:- "+password);
+	}

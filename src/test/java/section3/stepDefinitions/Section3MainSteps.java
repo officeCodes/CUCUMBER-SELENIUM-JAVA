@@ -10,10 +10,11 @@ public class Section3MainSteps {
 	    // Write code here that turns the phrase above into concrete actions
 	    System.out.println("User landed On NetBanking page!!!");
 	}
-	@When("user login into application")
-	public void user_login_into_application() {
+	@When("user login into application with {string} and password {string}")
+	public void user_login_into_application(String username, String password) {
 	    // Write code here that turns the phrase above into concrete actions
 		System.out.println("User login into application!!!");
+		System.out.println("Username is:- "+username+" and password is:- "+password);
 	}
 	@Then("Home Page is displayed")
 	public void home_page_is_displayed() {
