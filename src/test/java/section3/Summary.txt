@@ -1,0 +1,24 @@
+Vid:- 11
+--------
+1. Feature file:- (it's a file/testSuite where you define scenarios in given,when,then format[collection of scenarios])
+2. Step Definition File:- (core program logic in java Selenium)
+3. Test Runner (Trigger file for running the test) - Junit/TestRunner - Java
+---------------------
+import io.cucumber.testng.CucumberOptions;
+
+@CucumberOptions(
+		features="/src/test/java/section3/featuresFiles",
+		glue="section3.stepDefinitions",
+		monochrome = true)
+public class TestNGRunner extends AbstractTestNGCucumberTests{
+	0. extending AbstractTestNGCucumberTests because -> this class helps us to make our Custom class compatible to run with our feature files.[
+		0.1) What is the class TestNg is using to make Cucumber Work inside the project
+			Ans:- AbstractTestNGCucumberTests
+		0.2) Which class you need to extend to make TestNG file Compatible with Cucumber
+			Ans:- AbstractTestNGCucumberTests
+	]
+	1. features/[feature file]:- is used to write the test Scenario in @Given @When @Then format/ works likes a test suite. 
+	2. glue/[stepDefinition_package,,, where we write all our actual logic,,, and this logics will be mapped with featureFiles]:- in glue you have to give the "StepDefinition_Package_Name" and it will autmatically scanned the entire package and provide it to feature files.
+	3. monochrome=true means you can see the output in the pure English Language. // otherwise it will be encoding64
+	4. When you don't define steps in Features file then -> "undefinedStepException" exceptions is thrown.
+}
