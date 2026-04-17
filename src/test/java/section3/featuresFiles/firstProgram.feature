@@ -27,6 +27,17 @@ Examples:
 	|	credituser	|	lpo132		|
 	
 	
+# Section 5 || Vid:- 16
+
+Scenario: User page default Sign up
+Given User is on Practice landing page
+When User Signup into application
+|	rahul	|
+|	Shetty	|
+|	contact@email.com	|
+|	54234152	|
+Then Home Page is displayed
+And Cards are displayed
 	
 	
 	

@@ -1,5 +1,7 @@
 package section3.stepDefinitions;
 
+import java.util.List;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -22,6 +24,7 @@ public class Section3MainSteps {
 		System.out.println("User login into application!!!");
 		System.out.println("Username is:- "+username+" and password is:- "+password);
 	}
+	
 	@Then("Home Page is displayed")
 	public void home_page_is_displayed() {
 	    // Write code here that turns the phrase above into concrete actions
@@ -32,4 +35,32 @@ public class Section3MainSteps {
 	    // Write code here that turns the phrase above into concrete actions
 		System.out.println("Cars are displayed!!!");
 	}
+	
+//	Section-5 - Vid - 16 code
+	@Given("User is on Practice landing page")
+	public void user_is_on_practice_landing_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	}
+
+	@When("User Signup into application")
+	public void user_signup_into_application(List<String> data) {
+	    // Write code here that turns the phrase above into concrete actions
+	    // For automatic transformation, change DataTable to one of
+	    // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
+	    // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
+	    // Double, Byte, Short, Long, BigInteger or BigDecimal.
+	    //
+	    // For other transformations you can register a DataTableType.
+		System.out.println(data.get(0));
+		System.out.println(data.get(1));
+		System.out.println(data.get(2));
+		System.out.println(data.get(3));
+	}
+
+	@Then("Cards are displayed")
+	public void cards_are_displayed() {
+	    // Write code here that turns the phrase above into concrete actions
+	}
+	
+	
 }

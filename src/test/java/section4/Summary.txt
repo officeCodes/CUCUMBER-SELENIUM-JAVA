@@ -52,7 +52,32 @@ Regex PatternSyntax is:-
 		1.2) ends with $
 		1.3) variable dataTypes are denoted in the step file like this (.+)
 		1.4) then we can write data - without "String" format also.
-	
+======================================================================================================================
+Vid: 16:-
+---------------------------
+[Handling multiple form data -> instead of handling only <Username> and <Password>]
+	[when there is multiple user data then how to handle it? instead of 
+	@When("user login into application with {string} and password {string}")
+	]
+---------------------------- [feature file]
+	Scenario: User page default Sign up
+	Given User is on Practice landing page
+	When User Signup into application
+	|	rahul	|
+	|	Shetty	|
+	|	contact@email.com	|
+	|	54234152	|
+	Then Home Page is displayed
+	And Cards are displayed
+---------------------------- [step definition]
+	@When("User Signup into application")
+	public void user_signup_into_application(List<String> data) {
+		System.out.println(data.get(0));
+		System.out.println(data.get(1));
+		System.out.println(data.get(2));
+		System.out.println(data.get(3));
+	}
+----------------------------
 
 	
 	
